@@ -84,20 +84,22 @@ export default function Home() {
             placeholder="Description"
             className="col-span- p-3 border my-3"
           />
-          <button
-            onClick={addItem}
-            type="submit"
-            className="bg-slate-300 hover:bg-slate-500 p-3 text-xl w-20 my-3 h-14"
-          >
-            add
-          </button>
-          <button
-            onClick={getdatasimple}
-            type="submit"
-            className="bg-slate-300 hover:bg-slate-500 p-3 text-xl w-20 my-3 h-14"
-          >
-            get
-          </button>
+          <div className="flex flex-row ">
+            <button
+              onClick={addItem}
+              type="submit"
+              className="bg-slate-300 hover:bg-slate-500 p-3 text-xl w-20 m-3 h-14"
+            >
+              add
+            </button>
+            <button
+              onClick={getdatasimple}
+              type="submit"
+              className="bg-slate-300 hover:bg-slate-500 p-3 text-xl w-20 my-3 h-14"
+            >
+              get
+            </button>
+          </div>
         </div>
         <div>
           <ul>
