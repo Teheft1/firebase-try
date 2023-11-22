@@ -16,6 +16,7 @@ import {
   collectionGroup,
 } from "firebase/firestore";
 import { compress } from "@/next.config";
+import Link from "next/link";
 
 export default function Weblab() {
   const [lab, setLab] = useState([]);
@@ -74,6 +75,8 @@ export default function Weblab() {
     await deleteDoc(doc(db, "laboratory", id));
   };
 
+ 
+
   const getsimpledata = async () => {
     const ref = collection(db, "laboratory");
     const idref = doc(ref, "RPL");
@@ -94,21 +97,21 @@ export default function Weblab() {
             value={newlab.id}
             onChange={(e) => setnewlab({ ...newlab, id: e.target.value })}
             type="text"
-            placeholder="Title"
+            placeholder="ID"
             className="col-span-3 p-3 border my-3"
           />
           <input
             value={newlab.labname}
             onChange={(e) => setnewlab({ ...newlab, labname: e.target.value })}
             type="text"
-            placeholder="Description"
+            placeholder="Nama Lab"
             className="col-span- p-3 border my-3"
           />
           <input
             value={newlab.kasublab}
             onChange={(e) => setnewlab({ ...newlab, kasublab: e.target.value })}
             type="text"
-            placeholder="Description"
+            placeholder="Kasublab"
             className="col-span- p-3 border my-3"
           />
           <div className="flex flex-row ">
@@ -141,6 +144,14 @@ export default function Weblab() {
               >
                 x
               </button>
+              <Link href={"../addaslab/" + labs.id}>
+                <button
+                  // onClick={() => addAslab(labs.id)}
+                  className="p-4 border-l-2 border-r-slate-900 hover:bg-slate-700"
+                >
+                  +
+                </button>
+              </Link>
             </li>
           ))}
         </ul>
