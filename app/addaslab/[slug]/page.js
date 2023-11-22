@@ -34,12 +34,14 @@ export default function Addaslab() {
     <div className="flex flex-col items-center pt-2">
       <h1>Add aslab</h1>
       <input
+        value={newAslab.Nama}
         onChange={(e) => setnewAslab({ ...newAslab, Nama: e.target.value })}
         type="text"
         placeholder="Nama"
         className="col-span-3 p-3 border my-3 text-black"
       />
       <input
+        value={newAslab.email}
         onChange={(e) => setnewAslab({ ...newAslab, email: e.target.value })}
         type="text"
         placeholder="Email"
